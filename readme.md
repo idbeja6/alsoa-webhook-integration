@@ -1,7 +1,3 @@
-<img src="https://uploads-ssl.webflow.com/623a2959e59eff1a0bd13e2e/6241ddc3b23ac92b63730870_alsoa.svg" width="300" title="Alsoa Logo" alt="Alsoa Logo">
-
----
-
 # Alsoa WebHook Integration
 
 Alsoa WebHook integration for HTTP JSON payloads. API endpoint accepts flat JSON objects of strings/arrays that represent a conversion event and submits it to relevant ad tracking conversion APIs.
