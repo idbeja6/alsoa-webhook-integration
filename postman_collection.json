@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "11e03263-4ffe-4a1e-931e-66f6fee6aa52",
+		"name": "Alsoa WebHook Generic HTTP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Fully Singular w/Facebook CLID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\" : \"John\",\n    \"last_name\"  : \"Doe\",\n    \"email\"      : \"john.doe@gmail.com\",\n    \"city\"       : \"Flagstaff\",\n    \"state\"      : \"Arizona\",\n    \"zip\"        : \"86001\",\n    \"phone\"      : \"3195551234\",\n    \"fb_clid\"    : \"PAAabyzfvPy7wke2y3m6sNN0WQ6znA8bfELKDnN8-PrDicr1j_hM21oO-GYkc_aem_AVv-AD2XmEbD4E56cvyev\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-alsoa-dev.cloudfunctions.net/eventapi/test-webhook",
+					"protocol": "https",
+					"host": [
+						"us-central1-alsoa-dev",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"eventapi",
+						"test-webhook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Singular/Multiple Without CLID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\" : [ \"John\", \"Sally\" ],\n    \"last_name\"  : [ \"Doe\", \"Mae\" ],\n    \"email\"      : [ \"john.doe@gmail.com\", \"sally.mae@gmail.com\" ],\n    \"phone\"      : [ \"3195551234\", \"3195551235\" ],\n    \"ip\"         : \"182.27.44.223\",\n    \"uas\"        : \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-alsoa-dev.cloudfunctions.net/eventapi/test-webhook",
+					"protocol": "https",
+					"host": [
+						"us-central1-alsoa-dev",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"eventapi",
+						"test-webhook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Singular/Multiple w/Google Ads CLID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\" : \"John\",\n    \"last_name\"  : \"Doe\",\n    \"email\"      : \"john.doe@gmail.com\",\n    \"city\"       : \"Flagstaff\",\n    \"state\"      : \"Arizona\",\n    \"zip\"        : \"86001\",\n    \"phone\"      : \"3195551234\",\n    \"at\"         : \"2022-05-09T22:01:23.561Z\",\n    \"g_clid\"     : \"CjwKCAjw682TBhATEiwA9crl3wR5SGkqta7gqGqd3yoRABj-zJ_8tjevUKY8cfZXj0_p1jeTDRLEUxoC27sQAvD_BwE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-alsoa-dev.cloudfunctions.net/eventapi/test-webhook",
+					"protocol": "https",
+					"host": [
+						"us-central1-alsoa-dev",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"eventapi",
+						"test-webhook"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
