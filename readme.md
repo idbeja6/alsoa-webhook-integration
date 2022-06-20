@@ -46,11 +46,13 @@ If you have access to the data outlined in the field definitions below **PLEASE*
 
 The only assumed field is the conversion `at` date time value. If this is omitted we assume the conversion happened at the time you called our WebHook since timestamps are a hard requirement for the trackers.
 
-#### Partial CLID Submission:
+#### Partial Data/No-CLID Tracking:
 
-In the circumstance that we do not have *any* CLIDs submitted to our WebHook we submit the tracking event to all configured trackers. This means that we may submit a partial tracking event to trackers where the event did not originate.
+**NOTE:** This section will only apply if the `facebook_track_no_clid` or `google_ads_track_no_clid` fields are explicitly set to `true` on the respective Alsoa integration. Alsoa will work with you to configure this when setting up tracking integrations (ie: providing you with a WebHook URL).
 
-**Example:** Clicked on Google Search Ad but `g_clid` was not set and both Google/Facebook integrations are configured for WebHook URL. We don't know who the desired tracker would be in this situation so we send the conversion event to each configured tracker.
+In the circumstance that we do not have CLIDs submitted to our WebHook we submit the tracking event to all `Integration.*_track_no_clid === true` configured trackers. This means that we may submit a partial tracking event to trackers where the event did not originate.
+
+**Example:** Clicked on Google Search Ad but `g_clid` was not set and both Google/Facebook integrations are configured for WebHook URL. We don't know who the desired tracker would be in this situation so we send the conversion event to each configured tracker that has no-CLID tracking enabled.
 
 ---
 
